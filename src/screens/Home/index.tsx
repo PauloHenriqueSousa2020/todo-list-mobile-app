@@ -7,6 +7,7 @@ export function Home() {
   const [tasks, setTasks] = useState([]);
 
   const handleCreateTask = (text: string) => {
+    if (text === '') return
     setTasks((prev) => [...prev, { id: prev.length + 1, text }]);
   }
 
@@ -28,21 +29,19 @@ export function Home() {
         <Form handleCreateTask={handleCreateTask} />
         <TaskSummary created={tasks.length} completed={completedTasks} />
 
-        <View style={styles.taskList}>
-          <FlatList
-            data={tasks}
-            keyExtractor={(item) => item.id.toString()}
-            renderItem={({ item }) =>
-              <Task
-                task={item}
-                handleCompleteTask={handleCompleteTask}
-                handleRemoveTask={handleRemoveTask}
-              />
-            }
-            showsVerticalScrollIndicator={false}
-            ListEmptyComponent={<EmptyTasks />}
-          />
-        </View>
+        <FlatList
+          data={tasks}
+          keyExtractor={(item) => item.id.toString()}
+          renderItem={({ item }) =>
+            <Task
+              task={item}
+              handleCompleteTask={handleCompleteTask}
+              handleRemoveTask={handleRemoveTask}
+            />
+          }
+          showsVerticalScrollIndicator={false}
+          ListEmptyComponent={<EmptyTasks />}
+        />
       </View>
     </View>
   )
@@ -50,15 +49,13 @@ export function Home() {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     height: '100%',
     backgroundColor: '#1A1A1A'
   },
 
   content: {
+    flex: 1,
     paddingHorizontal: 24
-  },
-
-  taskList: {
-    marginBottom: 40
   }
 })
