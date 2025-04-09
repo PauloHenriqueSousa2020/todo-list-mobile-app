@@ -36,6 +36,6 @@ Durante o desenvolvimento, foram utilizados os seguintes conceitos:
 
 <div style="display: flex; justify-content: space-between; gap: 10px;">
   <!-- Substitua os links abaixo pelas imagens reais -->
-  <img src="./assets/homepage.png" alt="Print 1" width="45%" />
-  <img src="./assets/empty_homepage.png" alt="Print 2" width="45%" />
+  <img src="./assets/empty_homepage.jpeg" alt="Print 2" width="45%" />
+  <img src="./assets/homepage.jpeg" alt="Print 1" width="45%" />
 </div>
